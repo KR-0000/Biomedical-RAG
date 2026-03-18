@@ -1,14 +1,14 @@
 # Biomedical-RAG
 
-A local Retrieval-Augmented Generation (RAG) pipeline for biomedical literature. This project enables the user to answer questions and the responses are grounded from relevant PubMed abstracts.
+A local Retrieval-Augmented Generation (RAG) pipeline for biomedical literature. This project enables users to answer questions, with responses grounded in relevant PubMed abstracts.
 
 Pipeline: User question --> Embedding --> Retrieval --> Generation
 
 Embedding: The question is encoded as a vector using a SentenceTransformer model to capture keywords and semantic meaning.
 
-Retrieval: ChromaDB stores pre-computed embeddings for abstracts, and uses a Hierarchical Navigable Small Worlds (HNSW) index to find top-k abstracts whose vectors are most similar to the query vector. 
+Retrieval: ChromaDB stores pre-computed embeddings for abstracts and uses a Hierarchical Navigable Small Worlds (HNSW) index to find top-k abstracts whose vectors are most similar to the query vector. 
 
-Generation: The retrieved abstracts are injected into a prompt template as contenxt, and the prompt is sent to a local LLM like Mistral via Ollama. 
+Generation: The retrieved abstracts are injected into a prompt template as context, and the prompt is sent to a local LLM like Mistral via Ollama. 
 
 
 ## Setup
@@ -23,7 +23,7 @@ Install Ollama from https://ollama.com, then pull a local model. I pulled Mistra
 ollama pull mistral
 ```
 
-Check the Ollama server has started by running:
+Check that the Ollama server has started by running:
 ```
 ollama serve
 ```
